@@ -1,0 +1,14 @@
+[2025-11-27 01:33:21] [INFO] PermissionBuilder NO cache
+[2025-11-27 01:33:21] [INFO] I am test TestBeforeMiddleware
+[2025-11-27 01:33:21] [INFO] I am TestAction with methods: DELETE
+[2025-11-27 01:33:21] [INFO] PermissionBuilder FROM cache
+[2025-11-27 01:33:21] [INFO] PermissionBuilder FROM cache
+[2025-11-27 01:33:21] [INFO] PermissionBuilder FROM cache
+[2025-11-27 01:33:21] [INFO] PermissionBuilder FROM cache
+[2025-11-27 01:39:47] [INFO] PermissionBuilder NO cache
+[2025-11-27 01:39:47] [INFO] I am test TestBeforeMiddleware
+[2025-11-27 01:39:47] [INFO] I am TestAction with methods: DELETE
+[2025-11-27 01:39:47] [INFO] PermissionBuilder FROM cache
+[2025-11-27 01:39:47] [INFO] PermissionBuilder FROM cache
+[2025-11-27 01:39:47] [INFO] PermissionBuilder FROM cache
+[2025-11-27 01:39:47] [INFO] PermissionBuilder FROM cache
