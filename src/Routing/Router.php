@@ -6,11 +6,10 @@
  * @date 19.11.2025
  */
 
-namespace gi_api_route;
+namespace gi_api_route\Routing;
 
 use gi_api_route\Builders\MiddlewareBuilder;
 use gi_api_route\Builders\PermissionBuilder;
-use gi_api_route\Concrete\NamespaceGroup;
 use gi_api_route\DTO\BuilderDTO;
 
 final class Router

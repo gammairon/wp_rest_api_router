@@ -14,7 +14,7 @@ namespace gi_api_route\DTO;
 
 use gi_api_route\Abstract\BaseAction;
 use gi_api_route\Abstract\BaseRoute;
-use gi_api_route\Concrete\NamespaceGroup;
+use gi_api_route\Routing\NamespaceGroup;
 
 /**
  * Class BuilderDTO

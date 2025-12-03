@@ -127,4 +127,29 @@ abstract class BaseRoute implements MiddlewareAwareInterface
         return $this->actions;
     }
 
+
+    /**
+     * Executes a scoped configuration block on this route instance.
+     *
+     * The callback receives the current BaseRoute object, allowing grouped,
+     * inline configuration in a fluent (chainable) style.
+     *
+     * This is useful for defining route actions, middleware or override rules
+     * in a clean and expressive way.
+     *
+     * Example:
+     *    $route->scope(function(BaseRoute $r) {
+     *        $r->addAction(new GetAction('GET'))
+     *          ->addAction(new PostAction('POST'));
+     *    });
+     *
+     * @param callable(self): void $callback Callback receiving the current route instance
+     * @return $this
+     */
+    public function scope(callable $callback): self
+    {
+        $callback($this);
+        return $this;
+    }
+
 }

@@ -64,4 +64,7 @@ interface MiddlewareAwareInterface
      * @return list<AfterMiddlewareInterface>
      */
     public function getAfterMiddlewares(): array;
+
+
+    public function middlewares(array $middlewares): static;
 }

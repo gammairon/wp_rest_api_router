@@ -6,7 +6,7 @@
 
 namespace gi_api_route\Abstract;
 
-use gi_api_route\Concrete\NamespaceGroup;
+use gi_api_route\Routing\NamespaceGroup;
 use gi_api_route\Contracts\MiddlewareAwareInterface;
 use gi_api_route\DTO\BuilderDTO;
 use gi_api_route\Enums\MiddlewareType;
@@ -57,6 +57,7 @@ abstract class BaseBuilder
         $this->action = $builderDTO->action;
         $this->route = $builderDTO->route;
         $this->group = $builderDTO->group;
+
     }
 
     /**
@@ -107,6 +108,7 @@ abstract class BaseBuilder
     /**
      * Collects middlewares of the given type from the hierarchy:
      * group → route → action.
+     * action → route → group. AFTER MW
      *
      * This ensures that all middlewares for a request are executed in order:
      * 1. NamespaceGroup middlewares
@@ -118,11 +120,17 @@ abstract class BaseBuilder
      */
     protected function getMiddlewares(MiddlewareType $type): array
     {
-        return array_merge(
-            $this->extractByType($this->group,  $type),
-            $this->extractByType($this->route,  $type),
-            $this->extractByType($this->action, $type),
-        );
+        $sources = $type === MiddlewareType::AFTER
+            ? [$this->action, $this->route, $this->group]
+            : [$this->group, $this->route, $this->action];
+
+        $middlewares = [];
+        foreach ($sources as $source) {
+            array_push($middlewares, ...$this->extractByType($source, $type));
+        }
+
+        return $middlewares;
+
     }
 
 }

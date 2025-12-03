@@ -14,14 +14,16 @@
 
 namespace gi_api_route\Enums;
 
-enum MiddlewareType
+
+enum MiddlewareType: string
 {
     /** Middleware executed before the main action is called. */
-    case BEFORE;
+    case BEFORE = 'BEFORE';
 
     /** Middleware executed after the main action is called, often for response modification. */
-    case AFTER;
+    case AFTER = 'AFTER';
 
     /** Middleware executed to check permissions or access rights before the action. */
-    case PERMISSION;
+    case PERMISSION = 'PERMISSION';
+
 }
