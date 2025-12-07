@@ -119,10 +119,10 @@ final class PermissionBuilder extends BaseBuilder
             ));
 
             if (isset($cache[$key])) {
-                Logger::write('PermissionBuilder FROM cache');
+                //Logger::write('PermissionBuilder FROM cache');
                 return $cache[$key];
             }
-            Logger::write('PermissionBuilder NO cache');
+            //Logger::write('PermissionBuilder NO cache');
             $result = $pipeline($request);
             $cache[$key] = $result;
 
