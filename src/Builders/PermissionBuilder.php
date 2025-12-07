@@ -17,12 +17,12 @@
  * @date 26.11.2025
  */
 
-namespace gi_api_route\Builders;
+namespace GiApiRoute\Builders;
 
-use gi_api_route\Abstract\BaseBuilder;
-use gi_api_route\Contracts\PermissionMiddlewareInterface;
-use gi_api_route\Enums\MiddlewareType;
-use gi_api_route\Support\Logger;
+use GiApiRoute\Abstract\BaseBuilder;
+use GiApiRoute\Contracts\PermissionMiddlewareInterface;
+use GiApiRoute\Enums\MiddlewareType;
+use GiApiRoute\Support\Logger;
 use WP_REST_Request;
 use Exception;
 

@@ -10,11 +10,11 @@
  * @date 26.11.2025
  */
 
-namespace gi_api_route\DTO;
+namespace GiApiRoute\DTO;
 
-use gi_api_route\Abstract\BaseAction;
-use gi_api_route\Abstract\BaseRoute;
-use gi_api_route\Routing\NamespaceGroup;
+use GiApiRoute\Abstract\BaseAction;
+use GiApiRoute\Abstract\BaseRoute;
+use GiApiRoute\Routing\NamespaceGroup;
 
 /**
  * Class BuilderDTO
@@ -22,7 +22,7 @@ use gi_api_route\Routing\NamespaceGroup;
  * Encapsulates the required elements for middleware and permisssion
  * builder initialization: the action, route, and namespace group.
  *
- * @package gi_api_route\DTO
+ * @package GiApiRoute\DTO
  */
 final class BuilderDTO
 {

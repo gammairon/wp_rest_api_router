@@ -14,15 +14,15 @@
  * After all routes are declared, Route::registerRoutes() must be called
  * to register them in WordPress via WP_REST_API.
  *
- * @package gi_api_route
+ * @package GiApiRoute
  * @author Artem <gammaironak@gmail.com>
  * @date 02.12.2025
  */
 
-namespace gi_api_route;
+namespace GiApiRoute;
 
-use gi_api_route\Routing\NamespaceGroup;
-use gi_api_route\Routing\Router;
+use GiApiRoute\Routing\NamespaceGroup;
+use GiApiRoute\Routing\Router;
 
 final class Route
 {

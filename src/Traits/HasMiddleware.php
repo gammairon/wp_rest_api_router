@@ -4,13 +4,13 @@
  * @date 20.11.2025
  */
 
-namespace gi_api_route\Traits;
+namespace GiApiRoute\Traits;
 
-use gi_api_route\Contracts\AfterMiddlewareInterface;
-use gi_api_route\Contracts\BeforeMiddlewareInterface;
-use gi_api_route\Contracts\PermissionMiddlewareInterface;
-use gi_api_route\Enums\MiddlewareType;
-use gi_api_route\Support\MiddlewareManager;
+use GiApiRoute\Contracts\AfterMiddlewareInterface;
+use GiApiRoute\Contracts\BeforeMiddlewareInterface;
+use GiApiRoute\Contracts\PermissionMiddlewareInterface;
+use GiApiRoute\Enums\MiddlewareType;
+use GiApiRoute\Support\MiddlewareManager;
 use InvalidArgumentException;
 
 trait HasMiddleware

@@ -4,12 +4,12 @@
  * @date 26.11.2025
  */
 
-namespace gi_api_route\Builders;
+namespace GiApiRoute\Builders;
 
-use gi_api_route\Abstract\BaseBuilder;
-use gi_api_route\Contracts\AfterMiddlewareInterface;
-use gi_api_route\Contracts\BeforeMiddlewareInterface;
-use gi_api_route\Enums\MiddlewareType;
+use GiApiRoute\Abstract\BaseBuilder;
+use GiApiRoute\Contracts\AfterMiddlewareInterface;
+use GiApiRoute\Contracts\BeforeMiddlewareInterface;
+use GiApiRoute\Enums\MiddlewareType;
 use WP_REST_Request;
 use Exception;
 use WP_Error;

@@ -13,12 +13,12 @@
  * @date 20.11.2025
  */
 
-namespace gi_api_route\Abstract;
+namespace GiApiRoute\Abstract;
 
-use gi_api_route\Contracts\MiddlewareAwareInterface;
-use gi_api_route\Enums\HttpMethod;
-use gi_api_route\Support\StringHelper;
-use gi_api_route\Traits\HasMiddleware;
+use GiApiRoute\Contracts\MiddlewareAwareInterface;
+use GiApiRoute\Enums\HttpMethod;
+use GiApiRoute\Support\StringHelper;
+use GiApiRoute\Traits\HasMiddleware;
 use WP_REST_Request;
 use InvalidArgumentException;
 

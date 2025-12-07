@@ -31,12 +31,12 @@
  * }
  * ```
  *
- * @package gi_api_route\Contracts
+ * @package GiApiRoute\Contracts
  * @author Artem <gammaironak@gmail.com>
  * @date 27.11.2025
  */
 
-namespace gi_api_route\Contracts;
+namespace GiApiRoute\Contracts;
 use WP_REST_Request;
 
 interface MiddlewareInterface

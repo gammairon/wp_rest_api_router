@@ -1,0 +1,17 @@
+{
+    "name": "gammaironak/gi-api-route",
+    "description": "Middleware-based API router for WordPress.",
+    "type": "library",
+    "require": {
+        "respect/validation": "^2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "GiApiRoute\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "platform-check": false
+    }
+}

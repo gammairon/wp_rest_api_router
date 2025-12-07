@@ -8,24 +8,29 @@
  * - Aliases defined in the manager
  *
  * Aliases can optionally include constructor parameters in the format:
- * "alias:param1,param2,...".
+ * "alias:param1;param2;...".
  *
  * Example:
  * ```php
  * $manager = new MiddlewareManager();
- * $manager->resolveOne('before', 'auth:admin,1');
+ * $manager->resolveOne('before', 'auth:admin;1');
  * ```
  *
- * @package gi_api_route\Support
+ * @package GiApiRoute\Support
  * @author Artem <gammaironak@gmail.com>
  * @date 02.12.2025
  */
 
-namespace gi_api_route\Support;
+namespace GiApiRoute\Support;
 
-use gi_api_route\Contracts\AfterMiddlewareInterface;
-use gi_api_route\Contracts\MiddlewareInterface;
-use gi_api_route\Enums\MiddlewareType;
+use GiApiRoute\Contracts\AfterMiddlewareInterface;
+use GiApiRoute\Contracts\MiddlewareInterface;
+use GiApiRoute\Enums\MiddlewareType;
+use GiApiRoute\Middlewares\Before\ThrottleMiddleware;
+use GiApiRoute\Middlewares\Permission\AuthMiddleware;
+use GiApiRoute\Middlewares\Permission\CapabilityMiddleware;
+use GiApiRoute\Middlewares\Permission\NonceMiddleware;
+use GiApiRoute\Middlewares\Permission\RoleMiddleware;
 use InvalidArgumentException;
 
 class MiddlewareManager
@@ -50,8 +55,15 @@ class MiddlewareManager
     public function __construct()
     {
         $this->aliases = [
-            MiddlewareType::PERMISSION->name => [],
-            MiddlewareType::BEFORE->name     => [],
+            MiddlewareType::PERMISSION->name => [
+                'auth'       => AuthMiddleware::class,
+                'capability' => CapabilityMiddleware::class,
+                'role'       => RoleMiddleware::class,
+                'nonce'      => NonceMiddleware::class
+            ],
+            MiddlewareType::BEFORE->name     => [
+                'throttle' => ThrottleMiddleware::class
+            ],
             MiddlewareType::AFTER->name      => []
         ];
     }
@@ -116,9 +128,12 @@ class MiddlewareManager
 
 
     /**
-     * Resolve middleware from an alias string.
+     *Resolve middleware from alias with support for multiple parameter groups.
      *
-     * Format: "alias" OR "alias:param1,param2,..."
+     * Format examples:
+     *    "alias"                          => no parameters
+     *    "alias:param1,param2"             => single parameter group
+     *    "alias:param1,param2;param3,param4" => multiple parameter groups
      *
      * @param MiddlewareType $type Middleware type
      * @param string $definition Alias string with optional parameters
@@ -128,7 +143,7 @@ class MiddlewareManager
      */
     public function resolveFromAlias(MiddlewareType $type, string $definition): MiddlewareInterface|AfterMiddlewareInterface
     {
-        // Format: "alias" OR "alias:param1,param2"
+
         [$alias, $paramString] = array_pad(explode(':', $definition, 2), 2, null);
 
         if (!isset($this->aliases[$type->name][$alias])) {
@@ -136,7 +151,17 @@ class MiddlewareManager
         }
 
         $class = $this->aliases[$type->name][$alias];
-        $params = $paramString ? explode(',', $paramString) : [];
+        $params = [];
+
+        if ($paramString) {
+            $groups = explode(';', $paramString);
+
+            foreach ($groups as $group) {
+                $groupParams = array_map('trim', explode(',', $group));
+                // Flatten single-element groups to scalar
+                $params[] = count($groupParams) === 1 ? $groupParams[0] : $groupParams;
+            }
+        }
 
         $instance = new $class(...$params);
         $this->validateInstance($instance, $type);

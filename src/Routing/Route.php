@@ -4,11 +4,11 @@
  * @date 02.12.2025
  */
 
-namespace gi_api_route\Routing;
+namespace GiApiRoute\Routing;
 
-use gi_api_route\Abstract\BaseAction;
-use gi_api_route\Abstract\BaseRoute;
-use gi_api_route\Enums\HttpMethod;
+use GiApiRoute\Abstract\BaseAction;
+use GiApiRoute\Abstract\BaseRoute;
+use GiApiRoute\Enums\HttpMethod;
 use WP_REST_Request;
 
 final class Route extends BaseRoute

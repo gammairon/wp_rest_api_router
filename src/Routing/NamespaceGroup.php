@@ -15,11 +15,11 @@
  * @date 20.11.2025
  */
 
-namespace gi_api_route\Routing;
+namespace GiApiRoute\Routing;
 
-use gi_api_route\Abstract\BaseRoute;
-use gi_api_route\Contracts\MiddlewareAwareInterface;
-use gi_api_route\Traits\HasMiddleware;
+use GiApiRoute\Abstract\BaseRoute;
+use GiApiRoute\Contracts\MiddlewareAwareInterface;
+use GiApiRoute\Traits\HasMiddleware;
 
 final class NamespaceGroup implements MiddlewareAwareInterface
 {

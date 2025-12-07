@@ -9,12 +9,12 @@
  * HttpMethod::GET
  * HttpMethod::POST
  *
- * @package gi_api_route\Enums
+ * @package GiApiRoute\Enums
  * @author Artem <gammaironak@gmail.com>
  * @date 20.11.2025
  */
 
-namespace gi_api_route\Enums;
+namespace GiApiRoute\Enums;
 
 enum HttpMethod: string
 {

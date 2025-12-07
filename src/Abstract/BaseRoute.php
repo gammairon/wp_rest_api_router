@@ -17,10 +17,10 @@
  * @date 19.11.2025
  */
 
-namespace gi_api_route\Abstract;
+namespace GiApiRoute\Abstract;
 
-use gi_api_route\Contracts\MiddlewareAwareInterface;
-use gi_api_route\Traits\HasMiddleware;
+use GiApiRoute\Contracts\MiddlewareAwareInterface;
+use GiApiRoute\Traits\HasMiddleware;
 use InvalidArgumentException;
 
 abstract class BaseRoute implements MiddlewareAwareInterface

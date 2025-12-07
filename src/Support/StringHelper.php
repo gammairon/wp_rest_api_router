@@ -4,7 +4,7 @@
  * @date 21.11.2025
  */
 
-namespace gi_api_route\Support;
+namespace GiApiRoute\Support;
 
 use Countable;
 

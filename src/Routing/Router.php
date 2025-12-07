@@ -6,11 +6,11 @@
  * @date 19.11.2025
  */
 
-namespace gi_api_route\Routing;
+namespace GiApiRoute\Routing;
 
-use gi_api_route\Builders\MiddlewareBuilder;
-use gi_api_route\Builders\PermissionBuilder;
-use gi_api_route\DTO\BuilderDTO;
+use GiApiRoute\Builders\MiddlewareBuilder;
+use GiApiRoute\Builders\PermissionBuilder;
+use GiApiRoute\DTO\BuilderDTO;
 
 final class Router
 {

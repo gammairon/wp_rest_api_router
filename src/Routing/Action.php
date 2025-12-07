@@ -4,9 +4,9 @@
  * @date 02.12.2025
  */
 
-namespace gi_api_route\Routing;
+namespace GiApiRoute\Routing;
 
-use gi_api_route\Abstract\BaseAction;
+use GiApiRoute\Abstract\BaseAction;
 use WP_REST_Request;
 use RuntimeException;
 

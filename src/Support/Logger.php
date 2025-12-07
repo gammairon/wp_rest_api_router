@@ -11,12 +11,12 @@
  * Logger::write('An error occurred', 'ERROR');
  * ```
  *
- * @package gi_api_route\Support
+ * @package GiApiRoute\Support
  * @author Artem <gammaironak@gmail.com>
  * @date 26.11.2025
  */
 
-namespace gi_api_route\Support;
+namespace GiApiRoute\Support;
 
 class Logger
 {

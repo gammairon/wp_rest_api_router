@@ -4,12 +4,12 @@
  * @date 26.11.2025
  */
 
-namespace gi_api_route\Abstract;
+namespace GiApiRoute\Abstract;
 
-use gi_api_route\Routing\NamespaceGroup;
-use gi_api_route\Contracts\MiddlewareAwareInterface;
-use gi_api_route\DTO\BuilderDTO;
-use gi_api_route\Enums\MiddlewareType;
+use GiApiRoute\Routing\NamespaceGroup;
+use GiApiRoute\Contracts\MiddlewareAwareInterface;
+use GiApiRoute\DTO\BuilderDTO;
+use GiApiRoute\Enums\MiddlewareType;
 use WP_REST_Request;
 
 /**
